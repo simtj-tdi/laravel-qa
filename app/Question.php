@@ -31,4 +31,16 @@ class Question extends Model
         return $this->created_at->diffForHumans();
     }
 
+    public function getStatusAttribute()
+    {
+        if ($this->answers > 0) {
+            if ($this->baset_answer_id) {
+                return "answered-acceptted";
+            }
+            return "answered";
+        }
+        return "unanswered";
+    }
+
+
 }
