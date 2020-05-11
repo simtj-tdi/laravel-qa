@@ -39,6 +39,7 @@ class Answer extends Model
                 $question->best_answer_id = NULL;
                 $question->save();
             }
+
         });
     }
 
